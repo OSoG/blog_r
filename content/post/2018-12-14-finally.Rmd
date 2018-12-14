@@ -28,3 +28,4 @@ blogdown::build_site()
 
 이렇게 하면 될지어다.
 
+blogdown::build_site()
