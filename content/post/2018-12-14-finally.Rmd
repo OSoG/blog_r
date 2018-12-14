@@ -1,0 +1,30 @@
+---
+title: Finally
+author: Dongweon Shin
+date: '2018-12-14'
+slug: finally
+categories:
+  - trying
+tags:
+  - trying
+image:
+  caption: ''
+  focal_point: ''
+---
+
+일단 도움이 되었던 링크는
+
+https://alison.rbind.io/post/up-and-running-with-blogdown/#read-up-on-blogdown
+
+이게 가장 자세히 설명을 해주었고..
+
+ex. path 추가한다거나.
+
+근데 hugo 2.0? 부터는 variable을 추가해야하는데 이걸 하면 됩니다.
+
+rmd 가 완성이 되면 흠 빌드 툴은 쓸 수 없지만
+
+blogdown::build_site()
+
+이렇게 하면 될지어다.
+
