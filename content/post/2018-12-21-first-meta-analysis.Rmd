@@ -1,0 +1,61 @@
+---
+title: first meta analysis
+author: Dongweon Shin
+date: '2018-12-21'
+slug: first-meta-analysis
+categories:
+  - meta
+tags:
+  - meta
+image:
+  caption: ''
+  focal_point: ''
+---
+
+Spooner et al. report a meta-analysis comparing Nedocromil sodium with placebo
+for preventing exercise-induced bronchoconstriction (EIB).
+
+The response is :
+the maximum fall in the FEV1 (forced expiratory volume in 1 second)
+over the course of follow-up, expressed as a percentage.
+
+For each study, mean value, sd and samples size ar ereported for both
+experimental and control group.
+
+The mean diff. is used as effect measure,
+i.e. mean value in Nedocromil sodium group minus mean value in placebo group.
+
+getwd()
+setwd(/Users/dongweonshin/blog_r/downloaded/meta-rbook-examples)
+load(".Rdata"")
+```{r}
+
+setwd('/Users/dongweonshin/blog_r/downloaded/meta-rbook-examples')
+load(".RData")
+
+library(meta)
+
+m<-metacont(Ne, Me, Se, Nc, Mc, Sc,
+            studlab = paste(author, year),
+            data=data1)
+
+#3. Produce forest plot
+forest(m, xlab = "Maximum % fall in FEV1")
+
+
+```
+
+The code carries out a meta-analysis for these data with continuous response using the metacont function,
+and the forest command produces the plot shown.
+
+This figure shows, for each study, the estimated mean differencer and its 95% confidence interval in the middle of the plot.
+
+The are a of the square centered on the estimated mean difference is proportional to the inverse of the variance of the study estimate resulting in a larger square for studies with more precise results,
+i.e. smaller variances
+
+On the right side of the forest plot, mean difference (MD) and its 95% confidencer interval are depicted.
+
+By default, results for both fixed effect and random effects meta-analysis are given.
+
+The columns labelled W(fixed) and W(random) reflect the percentage weight given to a study in the respective meta-analysis
+

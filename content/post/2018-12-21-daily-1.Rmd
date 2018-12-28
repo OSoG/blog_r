@@ -1,0 +1,161 @@
+---
+title: Daily_1
+author: Dongweon Shin
+date: '2018-12-21'
+slug: daily-1
+categories:
+  - daily
+tags:
+  - daily
+image:
+  caption: ''
+  focal_point: ''
+---
+
+Part1 Getting started
+
+```{r}
+#set x to be a matrix
+x<-matrix(c(1,2,3,4), nrow=2)
+
+#display x
+x
+```
+
+```{r}
+#square the matrix x and add 3 to all entries
+x*x+3
+
+```
+
+```{r}
+#create a function, called f, which squares its argument
+f<-function(x){x*x}
+f(2)
+```
+
+```{r}
+#square the matrix x using R function f
+f(x)
+```
+
+```{r}
+#to see objects in the attached .RData workspace, use the ls function
+ls()
+
+#to delete R object g,
+rm(f)
+ls()
+
+#to delete all R objects in the workspace, you can use the following command:
+rm(list=ls())
+ls()
+
+#character(0) means that no R objects ar efound in the workspace
+```
+
+getwd() is for command line.
+
+move downloaded file to getwd()
+
+;mv moves or renames file
+
+```{r}
+setwd("~/blog_r/downloaded/meta-rbook-examples")
+list.files(pattern="dataset01")
+
+#The working directory was changed to /Users/dongweonshin/blog_r/downloaded/meta-rbook-examples inside a notebook chunk. The working directory will be reset when the chunk is finished running. Use the knitr root.dir option in the setup chunk to change the working directory for notebook chunks.
+
+
+
+# 1. Read in the data
+data1 <- read.csv("dataset01.csv", as.is=TRUE)
+# 2. Print structure of R object data1
+str(data1)
+# 3. To view an R object, just type its name:
+data1
+
+#save data
+save.image()
+
+```
+
+
+```{r}
+ls()
+```
+
+```
+When you restart, ls will give you nothing
+
+getwd() = "/Users/dongweonshin/blog_r"
+
+setwd("~/blog_r/downloaded/meta-rbook-examples")
+
+```
+
+```{r}
+load(".RData")
+ls()
+```
+
+
+
+```
+install.packages('addinslist')
+```
+
+```{r}
+library(meta)
+setwd("~/blog_r/downloaded/meta-rbook-examples")
+examples <- read.rm5("Examples from Meta-Analysis with R.csv",
+                     numbers.in.labels=FALSE)
+
+#Review Manager 5 (RevMan 5) is the current software used for preparing and maintaining Cochrane Reviews
+```
+
+dim(examples)
+class(examples)
+
+
+
+
+
+examples[, 1:6]
+
+
+
+
+
+args(metacr)
+
+
+
+
+
+mc1.cr <- metacr(examples)
+mb1.cr <- metacr(examples, 2, 1)
+
+
+
+
+
+# 1. Read in the data
+data1 <- read.csv("dataset01.csv", as.is=TRUE)
+# 2. Conduct meta-analysis
+mc1.md <- metacont(Ne, Me, Se, Nc, Mc, Sc,
+                   data=data1, studlab=paste(author, year),
+                   comb.random=FALSE)
+# 3. Read in the data
+data7 <- read.csv("dataset07.csv")
+# 4. Conduct meta-analysis
+mb1.rr <- metabin(Ee, Ne, Ec, Nc, data=data7, studlab=study,
+                  comb.random=FALSE)
+
+
+
+
+
+class(mc1.cr)
+class(mc1.md)
+

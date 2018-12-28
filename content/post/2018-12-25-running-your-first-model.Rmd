@@ -1,0 +1,20 @@
+---
+title: Running your first model
+author: Paul Mooney
+date: '2018-12-25'
+slug: running-your-first-model
+categories: []
+tags: []
+image:
+  caption: ''
+  focal_point: ''
+---
+
+
+# load in packages we'll use
+library(tidyverse) # utility functions
+library(rpart) # for regression trees
+library(randomForest) # for random forests
+
+# read the data and store data in DataFrame titled melbourne_data
+melbourne_data <- read_csv("../input/melb_data.csv")

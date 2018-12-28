@@ -1,0 +1,41 @@
+How do we know if our model is good?
+
+You've built a model. But how good is it?
+
+You'll need to answer this question for almost every model you build. In most (though not necessarily all) applications, the relevant measure of model quality is predictive accuracy. In other words, we want to know if the model's predictions are close to what actually happened.
+
+"predictive accuracy."
+
+One way that you could measure this is by making predictions with the same data you used to train your model by comparing those predictions to the actual target values in the training data. This approach has a critical shortcoming, which you will see in a moment (and which you'll subsequently see how to solve).
+
+Even with this simple approach, you'll need to summarize the model quality into a form that someone can understand. If you have predicted and actual home values for 10000 houses, you will inevitably end up with a mix of good and bad predictions. Looking through such a long list would be difficult and it would be hard to summarize your findings.
+
+There are many metrics for summarizing model quality, but we'll start with one called Mean Absolute Error (also called MAE). Let's break down this metric starting with the last word, error.
+
+"Mean absolute error"
+
+
+The prediction error for each house is:
+
+error=actual−predicted
+
+So, if a house cost 150,000 dollars and you predicted it would cost 100,000 dollars the error is 50,000 dollars.
+
+With the MAE metric, we take the absolute value of each error. This converts each error to a positive number. We then take the average of those absolute errors. This is our measure of model quality. In plain English, it can be said as
+
+"On average, our predictions are off by about X."
+
+We can get the MAE for our model using the mae() function, from the modelr package. The mae() function takes in a model and the dataset to test it against.
+
+
+
+
+
+
+
+
+
+
+
+
+

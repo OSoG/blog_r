@@ -1,0 +1,9 @@
+
+
+Above, we read our data into a special type of data frame called a tibble. Data frames are the fundamental data structure in R. They hold the type of data you might think of as a table. This is similar to a sheet in Excel, or a table in a SQL database. Let's start by looking at a basic data overview with our example data from Melbourne and the data you'll be working with from Iowa.
+
+    Tibbles are just data frames with some extra features that make them easier to work with. You can do everything with a tibble that you can do with a regular data frame, and they automatically take care of a lot of things that tend to trip folks up. If you absolutely, positively have to have a pl data frame, read your data in with the function read.csv() rather than the function read_csv().
+
+The example will use data at the file path ../input/melb_data.csv. Your data will be available in your notebook at ../input/train.csv (which is already typed into the sample code for you).
+
+Now that we have our data in R, let's summarize it!

@@ -1,0 +1,42 @@
+In this chapter we show how to make hypothesis tests and construct confidence intervals.
+These inferential methods are the building blocks for tdrawing conclusions using models and data.
+
+If you simply wish to estimate the parameters β, it is not essential to assume any distributional form for the errors e.
+
+However, if we wnat to make any confidence intervals or perform any hypothesis tests using the most commonly used methods, we will need to do this.
+Now we are going to assume that the error are normally distributed.
+Often this is quite reasonable but we will discuss later how we can check this assumption and how we might deal with data where the normality assumptions is not justifiable.
+
+If we have chosen to use least squares estimation, we should already have assumed that the errors are independent and identically distributed (iid) with mena 0 and variance V, so we have e~
+
+
+
+
+3.1 Hypothesis Tests to compare models
+
+Given several predictors for a response, we might wonder whether all are needed.
+Consider a larger model, S, and a smaller model, w, which consists of a subset of the predictors that are in S.
+
+If there is not much difference in the fit, we would prefer the smaller model on the principle that simpler explanations are preferred.
+
+
+On the other hand, if the fit of the larger model is appreciably better, we will prefer it.
+
+
+We will take w to represent the null hypothesis and S to represent the alternative
+A geometricla view
+
+If RSSw - RSSs is small, then the fit of the smaller model is almost as good as the larger model and so we would prefer the smaller model on the grounds of simplicity.
+
+This suggests that something like :
+
+
+
+
+
+
+
+
+
+
+

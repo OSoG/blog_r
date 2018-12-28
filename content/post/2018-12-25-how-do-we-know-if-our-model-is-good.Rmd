@@ -1,0 +1,18 @@
+---
+title: How do we know if our model is good
+author: Paul Mooney
+date: '2018-12-25'
+slug: how-do-we-know-if-our-model-is-good
+categories: []
+tags: []
+image:
+  caption: ''
+  focal_point: ''
+---
+# package with the mae function
+library(modelr)
+
+# get the mean average error for our model
+mae(model = fit, data = melbourne_data)
+
+
